@@ -11,10 +11,13 @@ async function getDb() {
   if (fs.existsSync(DB_PATH)) {
     const buf = fs.readFileSync(DB_PATH);
     db = new SQL.Database(buf);
+    createTables();
+    ensureSeedUser();
   } else {
     db = new SQL.Database();
     createTables();
     seedData();
+    ensureSeedUser();
     saveDb();
   }
   return db;
@@ -157,12 +160,24 @@ function seedData() {
   const schStmt = db.prepare('INSERT INTO schemes (name,name_hi,name_mr,description,description_hi,description_mr,eligibility,eligibility_hi,eligibility_mr,how_to_apply,how_to_apply_hi,how_to_apply_mr,official_link,amount) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
   schemes.forEach(s => { schStmt.run(s); });
   schStmt.free();
+}
 
-  // Test User (test@example.com / password123)
-  const bcrypt = require('bcryptjs');
-  const testHash = bcrypt.hashSync('password123', 10);
-  db.run(`INSERT OR IGNORE INTO users (name, email, password_hash, state, district) VALUES (?, ?, ?, ?, ?)`,
-    ['Test Farmer', 'test@example.com', testHash, 'Maharashtra', 'Pune']);
+function ensureSeedUser() {
+  if (!db) return;
+  try {
+    const stmt = db.prepare("SELECT id FROM users WHERE LOWER(email) = 'test@example.com'");
+    const exists = stmt.step();
+    stmt.free();
+    if (!exists) {
+      const bcrypt = require('bcryptjs');
+      const testHash = bcrypt.hashSync('password123', 10);
+      db.run("INSERT INTO users (name, email, password_hash, state, district, language_pref) VALUES (?, ?, ?, ?, ?, ?)",
+        ['Test Farmer', 'test@example.com', testHash, 'Maharashtra', 'Pune', 'en']);
+      saveDb();
+    }
+  } catch (err) {
+    console.error('Error ensuring seed user:', err);
+  }
 }
 
 module.exports = { getDb, saveDb };
