@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Vendors & Contacts - ShetiBook</title>
+  <meta name="description"
+    content="Find trusted agricultural vendors, seed suppliers, fertilizer dealers, and farm equipment providers near you on ShetiBook.">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/vendors.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="/" class="nav-logo">🌱 <span>ShetiBook</span></a>
+    <button class="mobile-toggle">☰</button>
+    <div class="nav-links">
+      <a href="/" data-i18n="nav_home">Home</a>
+      <a href="/diagnose.html" data-i18n="nav_diagnose">Diagnose</a>
+      <a href="/crops.html" data-i18n="nav_crops">Crops</a>
+      <a href="/community.html" data-i18n="nav_community">Community</a>
+      <a href="/schemes.html" data-i18n="nav_schemes">Schemes</a>
+      <a href="/vendors.html" class="active" data-i18n="nav_vendors">Vendors</a>
+      <a href="/dashboard.html" class="auth-only" data-i18n="nav_dashboard">Dashboard</a>
+      <a href="/login.html" class="guest-only btn btn-outline btn-sm" data-i18n="nav_login">Login</a>
+      <a href="/register.html" class="guest-only btn btn-primary btn-sm" data-i18n="nav_register">Register</a>
+      <button class="logout-btn auth-only btn btn-sm" style="color:var(--danger)" data-i18n="nav_logout">Logout</button>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="hi">हि</button>
+        <button class="lang-btn" data-lang="mr">मर</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="vendors-hero">
+      <div class="vendors-hero-content">
+        <div class="vendors-hero-badge">🤝 Trusted Network</div>
+        <h1 data-i18n="vendors_title">Agricultural Vendors & Contacts</h1>
+        <p data-i18n="vendors_subtitle">Connect with verified seed suppliers, fertilizer dealers, equipment providers,
+          and agricultural experts across India.</p>
+        <div class="vendors-search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="vendorSearch" placeholder="Search vendors by name, product, or location..."
+            data-i18n="vendors_search_placeholder">
+          <select id="stateFilter" class="state-select">
+            <option value="">All States</option>
+            <option>Maharashtra</option>
+            <option>Punjab</option>
+            <option>Uttar Pradesh</option>
+            <option>Gujarat</option>
+            <option>Madhya Pradesh</option>
+            <option>Rajasthan</option>
+            <option>Haryana</option>
+            <option>Karnataka</option>
+            <option>Tamil Nadu</option>
+            <option>Andhra Pradesh</option>
+          </select>
+        </div>
+      </div>
+      <div class="vendors-hero-visual">
+        <div class="vendor-orb orb-1">🌾</div>
+        <div class="vendor-orb orb-2">🧪</div>
+        <div class="vendor-orb orb-3">🚜</div>
+        <div class="vendor-orb orb-4">🌱</div>
+      </div>
+    </div>
+
+    <div class="container" style="padding-bottom:4rem;">
+      <!-- Stats Banner -->
+      <div class="vendor-stats-banner">
+        <div class="vendor-stat-item">
+          <span class="vstat-number">200+</span>
+          <span class="vstat-label">Verified Vendors</span>
+        </div>
+        <div class="vendor-stat-item">
+          <span class="vstat-number">18</span>
+          <span class="vstat-label">States Covered</span>
+        </div>
+        <div class="vendor-stat-item">
+          <span class="vstat-number">4</span>
+          <span class="vstat-label">Categories</span>
+        </div>
+        <div class="vendor-stat-item">
+          <span class="vstat-number">24/7</span>
+          <span class="vstat-label">Support Available</span>
+        </div>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="vendor-tabs" id="vendorTabs">
+        <button class="vendor-tab active" data-cat="all" id="tab-all">
+          <span class="tab-icon">🏪</span> All Vendors
+        </button>
+        <button class="vendor-tab" data-cat="seeds" id="tab-seeds">
+          <span class="tab-icon">🌱</span> Seed Suppliers
+        </button>
+        <button class="vendor-tab" data-cat="fertilizers" id="tab-fertilizers">
+          <span class="tab-icon">🧪</span> Fertilizers
+        </button>
+        <button class="vendor-tab" data-cat="pesticides" id="tab-pesticides">
+          <span class="tab-icon">🛡️</span> Pesticides
+        </button>
+        <button class="vendor-tab" data-cat="equipment" id="tab-equipment">
+          <span class="tab-icon">🚜</span> Equipment
+        </button>
+        <button class="vendor-tab" data-cat="organic" id="tab-organic">
+          <span class="tab-icon">🍃</span> Organic
+        </button>
+      </div>
+
+      <!-- Vendor Grid -->
+      <div class="vendor-grid" id="vendorGrid">
+        <!-- Cards rendered by JS -->
+      </div>
+
+      <!-- No Results -->
+      <div class="no-vendors" id="noVendors" style="display:none;">
+        <div class="no-vendors-icon">🔍</div>
+        <h3>No vendors found</h3>
+        <p>Try adjusting your search or filter criteria.</p>
+      </div>
+
+      <!-- Emergency Helpline Banner -->
+      <div class="helpline-banner">
+        <div class="helpline-icon">📞</div>
+        <div class="helpline-content">
+          <h3>Agricultural Emergency Helpline</h3>
+          <p>Facing a crop crisis? Call the Kisan Call Centre for free expert guidance</p>
+        </div>
+        <a href="tel:18001801551" class="helpline-number">
+          <span>Kisan Helpline</span>
+          <strong>1800-180-1551</strong>
+          <span class="free-badge">FREE</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Chatbot widget will be injected by chatbot.js -->
+
+  <footer class="footer">
+    <p data-i18n="footer_text">© 2024 ShetiBook. Empowering Indian Farmers with Technology.</p>
+  </footer>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/vendors.js"></script>
+  <script src="/js/chatbot.js"></script>
+</body>
+
+</html>

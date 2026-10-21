@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Diagnose Disease - ShetiBook</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/" class="nav-logo">🌱 <span>ShetiBook</span></a>
+    <button class="mobile-toggle">☰</button>
+    <div class="nav-links">
+      <a href="/" data-i18n="nav_home">Home</a>
+      <a href="/diagnose.html" class="active" data-i18n="nav_diagnose">Diagnose</a>
+      <a href="/crops.html" data-i18n="nav_crops">Crops</a>
+      <a href="/community.html" data-i18n="nav_community">Community</a>
+      <a href="/schemes.html" data-i18n="nav_schemes">Schemes</a>
+      <a href="/vendors.html" data-i18n="nav_vendors">Vendors</a>
+      <a href="/dashboard.html" class="auth-only" data-i18n="nav_dashboard">Dashboard</a>
+      <a href="/login.html" class="guest-only btn btn-outline btn-sm" data-i18n="nav_login">Login</a>
+      <a href="/register.html" class="guest-only btn btn-primary btn-sm" data-i18n="nav_register">Register</a>
+      <button class="logout-btn auth-only btn btn-sm" style="color:var(--danger)" data-i18n="nav_logout">Logout</button>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="hi">हि</button>
+        <button class="lang-btn" data-lang="mr">मर</button>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="page-content container">
+    <div class="section-title" data-i18n="diagnose_title">Crop Disease Diagnosis</div>
+    <div class="section-subtitle" data-i18n="diagnose_subtitle">Describe symptoms, upload photo, or use voice input</div>
+    
+    <div class="grid grid-2">
+      <div class="card">
+        <form id="diagnose-form">
+          <div class="form-group">
+            <label data-i18n="upload_photo">Upload Crop Photo</label>
+            <div class="diagnose-area">
+              <input type="file" id="crop-image" accept="image/*">
+              <div class="icon">📸</div>
+              <p data-i18n="upload_hint">Drag & drop or click to upload (JPG, PNG)</p>
+            </div>
+            <div id="image-preview" class="preview-container" style="display:none"></div>
+          </div>
+          
+          <div class="form-group" style="position:relative">
+            <label data-i18n="describe_symptoms">Describe the symptoms you see...</label>
+            <textarea id="symptoms-input" class="form-control" rows="4" required data-i18n="describe_symptoms"></textarea>
+            <button type="button" id="voice-btn" class="voice-btn" style="position:absolute;bottom:10px;right:10px;width:40px;height:40px;font-size:1.2rem" title="Voice Input">🎤</button>
+          </div>
+          <div style="text-align:right;margin-bottom:1.5rem">
+            <span style="font-size:.8rem;color:var(--text-muted)" data-i18n="voice_hint">Click mic to speak</span>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1.1rem;padding:14px">
+            🔬 <span data-i18n="analyze_btn">Analyze Disease</span>
+          </button>
+        </form>
+      </div>
+      
+      <div>
+        <div id="diagnosis-results">
+          <div class="card" style="text-align:center;padding:3rem 1rem;border:2px dashed rgba(255,255,255,.1);background:transparent;box-shadow:none">
+            <div style="font-size:4rem;margin-bottom:1rem;opacity:0.5">🌱</div>
+            <h3 style="color:var(--text-muted)">Results will appear here</h3>
+            <p style="font-size:.9rem;color:var(--text-muted);margin-top:.5rem">Upload a photo and describe symptoms to get a diagnosis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/js/i18n.js"></script><script src="/js/app.js"></script><script src="/js/diagnose.js"></script><script src="/js/chatbot.js"></script>
+</body>
+</html>

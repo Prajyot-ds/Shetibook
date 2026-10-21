@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# User Uploads (keep directory via .gitkeep)
+uploads/*
+!uploads/.gitkeep
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Tool scratch & internal folders
+.gemini/
+*.log
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+.DS_Store

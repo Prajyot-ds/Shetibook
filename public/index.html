@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>ShetiBook - Digital Farming Assistant</title>
+  <meta name="description" content="ShetiBook helps Indian farmers identify crop diseases, access government schemes, and connect with the farming community.">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/" class="nav-logo">🌱 <span>ShetiBook</span></a>
+    <button class="mobile-toggle">☰</button>
+    <div class="nav-links">
+      <a href="/" class="active" data-i18n="nav_home">Home</a>
+      <a href="/diagnose.html" data-i18n="nav_diagnose">Diagnose</a>
+      <a href="/crops.html" data-i18n="nav_crops">Crops</a>
+      <a href="/community.html" data-i18n="nav_community">Community</a>
+      <a href="/schemes.html" data-i18n="nav_schemes">Schemes</a>
+      <a href="/vendors.html" data-i18n="nav_vendors">Vendors</a>
+      <a href="/dashboard.html" class="auth-only" data-i18n="nav_dashboard">Dashboard</a>
+      <a href="/login.html" class="guest-only btn btn-outline btn-sm" data-i18n="nav_login">Login</a>
+      <a href="/register.html" class="guest-only btn btn-primary btn-sm" data-i18n="nav_register">Register</a>
+      <button class="logout-btn auth-only btn btn-sm" style="color:var(--danger)" data-i18n="nav_logout">Logout</button>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="hi">हि</button>
+        <button class="lang-btn" data-lang="mr">मर</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg-blob"></div>
+    <div class="hero-content">
+      <h1 data-i18n="hero_title">Smart Farming Starts Here</h1>
+      <p data-i18n="hero_subtitle">Identify crop diseases, access government schemes, and connect with the farming community — all in your language.</p>
+      <div class="hero-buttons">
+        <a href="/register.html" class="btn btn-primary" data-i18n="get_started">Get Started</a>
+        <a href="/crops.html" class="btn btn-outline" data-i18n="learn_more">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-number">10,000+</div><div class="stat-label" data-i18n="stat_farmers">Farmers Helped</div></div>
+        <div class="stat"><div class="stat-number">8+</div><div class="stat-label" data-i18n="stat_crops">Crops Covered</div></div>
+        <div class="stat"><div class="stat-number">15+</div><div class="stat-label" data-i18n="stat_diseases">Diseases Listed</div></div>
+        <div class="stat"><div class="stat-number">5+</div><div class="stat-label" data-i18n="stat_schemes">Govt Schemes</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <h2 class="section-title" data-i18n="tagline">Digital Farming Assistant</h2>
+    <p class="section-subtitle">Everything a farmer needs in one place</p>
+    <div class="grid grid-4">
+      <div class="card card-glass">
+        <div class="card-icon">🔬</div>
+        <h3 data-i18n="feature_diagnose">Disease Detection</h3>
+        <p data-i18n="feature_diagnose_desc">Upload a photo or describe symptoms to identify crop diseases instantly.</p>
+      </div>
+      <div class="card card-glass">
+        <div class="card-icon" style="background:linear-gradient(135deg,#d4a373,#e9c46a)">📚</div>
+        <h3 data-i18n="feature_crops">Crop Encyclopedia</h3>
+        <p data-i18n="feature_crops_desc">Complete information about crops, growing seasons, and best practices.</p>
+      </div>
+      <div class="card card-glass">
+        <div class="card-icon" style="background:linear-gradient(135deg,#264653,#2a9d8f)">👥</div>
+        <h3 data-i18n="feature_community">Farmer Community</h3>
+        <p data-i18n="feature_community_desc">Connect with other farmers, share tips, and learn from experiences.</p>
+      </div>
+      <div class="card card-glass">
+        <div class="card-icon" style="background:linear-gradient(135deg,#e76f51,#f4a261)">💰</div>
+        <h3 data-i18n="feature_schemes">Financial Schemes</h3>
+        <p data-i18n="feature_schemes_desc">Explore government schemes, subsidies, and financial assistance programs.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><p data-i18n="footer_text">© 2024 ShetiBook. Empowering Indian Farmers with Technology.</p></footer>
+  <script src="/js/i18n.js"></script><script src="/js/app.js"></script><script src="/js/chatbot.js"></script>
+</body>
+</html>
